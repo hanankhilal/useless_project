@@ -10,8 +10,7 @@
 
   <!-- CSS files -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="extra-styles.css" /> <!-- second CSS file -->
-
+  <link rel="stylesheet" href="extra-styles.css" />
 </head>
 <body>
   <div class="app">
@@ -35,6 +34,9 @@
             <div id="topCount" class="count">0</div>
           </div>
 
+          <!-- NEW: Mocking message -->
+          <div id="mockMessage" class="mock-message">Let's see what you say the most…</div>
+
           <div class="details">
             <div id="runners" class="runners">Top 5: —</div>
             <div id="status" class="status">Status: idle</div>
@@ -51,14 +53,11 @@
       <small>Built for fun — open in Chrome/Edge. Backend optional at <code>/save</code>.</small>
     </footer>
   </div>
-
-  <!-- optional ding sound file -->
   <audio id="ding" src="ding.mp3" preload="auto"></audio>
 
   <!-- JS files -->
   <script src="app.js"></script>
-  <script src="chart-handler.js"></script> <!-- second JS file -->
-  <script src="ui-effects.js"></script> <!-- third JS file -->
-
+  <script src="chart-handler.js"></script>
+  <script src="ui-effects.js"></script>
 </body>
 </html>
