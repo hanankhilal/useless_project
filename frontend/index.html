@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EchoLens — Most Used Word</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="extra-styles.css" /> <!-- second CSS file -->
+
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>EchoLens — Most Used Word</h1>
+      <p class="subtitle">Speak and watch your words animate in real time. Best in Chrome/Edge.</p>
+    </header>
+
+    <main>
+      <section class="controls">
+        <button id="btn-perm" class="btn">🎤 Allow Microphone</button>
+        <button id="btn-start" class="btn primary" disabled>▶ Start</button>
+        <button id="btn-stop" class="btn" disabled>⏹ Stop</button>
+        <button id="btn-save" class="btn" disabled>💾 Save Session</button>
+      </section>
+
+      <section class="visual">
+        <div class="left-panel">
+          <div class="top-word">
+            <div id="topWord" class="word">—</div>
+            <div id="topCount" class="count">0</div>
+          </div>
+
+          <div class="details">
+            <div id="runners" class="runners">Top 5: —</div>
+            <div id="status" class="status">Status: idle</div>
+          </div>
+        </div>
+
+        <div class="chart-wrap">
+          <canvas id="barChart"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built for fun — open in Chrome/Edge. Backend optional at <code>/save</code>.</small>
+    </footer>
+  </div>
+
+  <!-- optional ding sound file -->
+  <audio id="ding" src="ding.mp3" preload="auto"></audio>
+
+  <!-- JS files -->
+  <script src="app.js"></script>
+  <script src="chart-handler.js"></script> <!-- second JS file -->
+  <script src="ui-effects.js"></script> <!-- third JS file -->
+
+</body>
+</html>

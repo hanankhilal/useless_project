@@ -1,0 +1,127 @@
+:root{
+  --bg:#0f1720;
+  --accent:#00d1b2;
+  --muted:#94a3b8;
+  --card:#0e1724;
+  --glass: rgba(255,255,255,0.02);
+}   
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg),#07111a);
+  color:#e6eef6;
+}
+
+.app{
+  max-width:980px;
+  margin:28px auto;
+  padding:20px;
+  background:var(--glass);
+  border-radius:12px;
+  box-shadow:0 6px 30px rgba(0,0,0,0.6);
+}
+
+header{text-align:center}
+h1{margin:0;font-size:24px}
+.subtitle{color:var(--muted);margin-top:6px;font-size:13px}
+
+.controls{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin:18px 0
+}
+.btn{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.06);
+  color:#e6eef6;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn:disabled{opacity:0.45;cursor:not-allowed}
+.btn.primary{
+  background:linear-gradient(90deg,var(--accent),#00bfa0);
+  color:#021418;
+  border:none;
+  box-shadow:0 6px 20px rgba(0,209,178,0.12)
+}
+
+.visual{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:18px;
+  align-items:start
+}
+.top-word{
+  background:linear-gradient(180deg,#071827, #08303d);
+  padding:20px;
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:220px
+}
+.word{
+  font-size:48px;
+  font-weight:900;
+  color:var(--accent);
+  transition:transform 300ms cubic-bezier(.2,.8,.2,1), text-shadow 300ms
+}
+.word.pulse{
+  transform:scale(1.18);
+  text-shadow:0 12px 30px rgba(0,209,178,0.18)
+}
+.count{
+  margin-top:8px;
+  color:var(--muted);
+  font-weight:700
+}
+.chart-wrap{
+  background:linear-gradient(180deg,#071423,#0c1c2b);
+  padding:14px;
+  border-radius:12px;
+  min-height:260px
+}
+.details{margin-top:12px;color:var(--muted)}
+.status{font-size:13px}
+.runners{font-size:14px}
+
+footer{
+  margin-top:18px;
+  text-align:center;
+  color:var(--muted)
+}
+
+/* --- MOCKING EFFECT for most-used word --- */
+.word.mocked {
+  animation: shake 0.4s infinite, rainbow 2s linear infinite;
+  text-transform: uppercase;
+  font-size: 56px;
+  text-shadow: 2px 2px 8px rgba(255, 0, 100, 0.6),
+               -2px -2px 8px rgba(0, 255, 200, 0.6);
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-2px, 2px) rotate(-2deg); }
+  40% { transform: translate(2px, -2px) rotate(2deg); }
+  60% { transform: translate(-2px, 2px) rotate(-1deg); }
+  80% { transform: translate(2px, -2px) rotate(1deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes rainbow {
+  0% { color: #ff0000; }
+  14% { color: #ff9900; }
+  28% { color: #ffee00; }
+  42% { color: #33ff00; }
+  57% { color: #00ffee; }
+  71% { color: #0066ff; }
+  85% { color: #9900ff; }
+  100% { color: #ff0000; }
+}
